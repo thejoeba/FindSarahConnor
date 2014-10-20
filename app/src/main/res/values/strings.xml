@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Find Sarah Connor</string>
+    <string name="title_activity_main">Find Sarah Connor</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="glass_voice_trigger">Find Sarah Connor</string>
+    <string-array name="HUD1SearchList1">
+        <item>"\n29 SLOTA  "</item>
+        <item>"EQU S87        "</item>
+        <item>":ADDRESS ADDER (SLOT# - 16)     "</item>
+        <item>"\n30 SLOT   "</item>
+        <item>"EQU S87        "</item>
+        <item>":&lt;&lt;&lt; POKE RAMCARD SLOT# (0 TO 7)"</item>
+        <item>"\n31 BANK   "</item>
+        <item>"EQU S88        "</item>
+        <item>":&lt;&lt;&lt; POKE 16K RAM BANK (1 TO 8)"</item>
+        <item>"\n32 COUNT  "</item>
+        <item>"EQU SF9        "</item>
+        <item>":HIBYTE # OF POINTS PLOTTED"</item>
+        <item>"\n33 VIEW   "</item>
+        <item>"EQU SFA        "</item>
+        <item>":PAGE VIEWED (INDIRECT)"</item>
+        <item>"\n34 VIEWH  "</item>
+        <item>"EQU SFB        "</item>
+        <item>":HIBYTE OF VIEW"</item>
+        <item>"\n35 STOR   "</item>
+        <item>"EQU SFC        "</item>
+        <item>":PAGE IN STORAGE (INDIRECT)"</item>
+        <item>"\n36 STORH  "</item>
+        <item>"EQU SFD        "</item>
+        <item>":HIBYTE OF STOR"</item>
+        <item>"\n37 DB     "</item>
+        <item>"EQU SFE        "</item>
+        <item>":USED FOR BANK SWITCHING RESET"</item>
+        <item>"\n38 DBH     "</item>
+        <item>"EQU SFF        "</item>
+        <item>":HIBYTE OF DB-8"</item>
+    </string-array>
+    <string-array name="HUD3SearchList1">
+        <item>"INSTALL  LDV#10      "</item>
+        <item>"\n]LOOP    LDA VCT.V   "</item>
+        <item>"\n         STA PG3VEC.V"</item>
+        <item>"\n		 DEV"</item>
+        <item>"\n		 BPL[LOOP"</item>
+        <item>"\n		 LDA S3F3"</item>
+        <item>"\n         EOR #SA5"</item>
+        <item>"\n		 STA S3F4"</item>
+        <item>"\n\n\n"</item>
+        <item>"\n		 LDA #PG3VEC/"</item>
+        <item>"\n		 LDV #PG3VEC"</item>
+        <item>"\n		 STA A1H"</item>
+        <item>"\n		 STA A4H"</item>
+        <item>"\n		 STY A1L"</item>
+        <item>"\n		 STY A4L"</item>
+        <item>"\n		 LDA #PG3VEC+10/"</item>
+        <item>"\n		 LDY #PG3VEC+10"</item>
+        <item>"\n		 STA A2H"</item>
+        <item>"\n		 STY A2L"</item>
+        <item>"\n		 SEC"</item>
+        <item>"\n		 JSR AUXMOVE"</item>
+        <item>"\n\n\n"</item>
+        <item>"\n		 LDA #BEGIN/"</item>
+        <item>"\n		 LDY #BEGIN"</item>
+        <item>"\n		 STA A1H"</item>
+        <item>"\n		 STA A4H"</item>
+        <item>"\n		 STY A1L"</item>
+        <item>"\n		 STY A4L"</item>
+        <item>"\n		 LDA #END/"</item>
+        <item>"\n		 LDY #END"</item>
+        <item>"\n		 STA A2H"</item>
+        <item>"\n		 STY A2L"</item>
+    </string-array>
+    <string-array name="HUD4SearchList1">
+        <item>" 8 ******************          "</item>
+        <item>"\n 9"</item>
+        <item>"\n10          ORG  4000"</item>
+        <item>"\n11 A1       =    S3C"</item>
+        <item>"\n12 A2       =    S3E"</item>
+        <item>"\n13 A4       =    S42"</item>
+        <item>"\n14 AUXMOVE  =    SC311"</item>
+        <item>"\n15"</item>
+        <item>"\n16 ****************************"</item>
+        <item>"\n17 * SETUP - move data for VOTC"</item>
+        <item>"\n18 * and catalog to auxmem at"</item>
+        <item>"\n19 * B000-B3FF (pseudo trk 11"</item>
+        <item>"\n20 * 0-3)"</item>
+        <item>"\n21 **************************"</item>
+        <item>"\n22 SETUP    LDA  #&lt;VTOC "</item>
+        <item>"\n23          STA  A1"</item>
+        <item>"\n24          LDA  #>VTOC"</item>
+        <item>"\n25          STA  A1+1"</item>
+        <item>"\n26          LDA  #&lt;END"</item>
+        <item>"\n27          STA  A2"</item>
+        <item>"\n28          LDA  #>END"</item>
+        <item>"\n29          STA  A2+1"</item>
+        <item>"\n30          LDA  #$88"</item>
+        <item>"\n31          STA  A4"</item>
+        <item>"\n32          LDA  #$88"</item>
+        <item>"\n33          STA  A4+1"</item>
+        <item>"\n34          SEC"</item>
+        <item>"\n35          JWP  AUXMOVE"</item>
+        <item>"\n36"</item>
+    </string-array>
+
+</resources>

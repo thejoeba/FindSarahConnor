@@ -1,0 +1,32 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    jcenter()
+    flatDir {
+        dirs 'prebuilt-libs'
+    }
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "20.0.0"
+    defaultConfig {
+        applicationId "com.heckbot.FindSarahConnor"
+        minSdkVersion 14
+        targetSdkVersion 19
+        versionCode 6
+        versionName '1.0.04'
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
